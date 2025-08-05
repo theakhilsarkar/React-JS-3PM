@@ -1,13 +1,13 @@
 import "./App.css";
-import User from "./components/User";
-import users from "./assets/userData";
+import Counter from "./components/Counter";
 
 function App() {
   return (
     <>
-      {users.map((user) => (
+      {/* {users.map((user) => (
         <User name={user.name} bio={user.email} />
-      ))}
+      ))} */}
+      <Counter />
     </>
   );
 }
