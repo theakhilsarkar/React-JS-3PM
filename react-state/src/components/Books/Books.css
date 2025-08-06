@@ -1,0 +1,15 @@
+.input-book {
+    height: 40px;
+    width: 300px;
+    margin: 10px;
+}
+
+.add-book {
+    background-color: blue;
+    color: white;
+}
+
+.remove-book {
+    background-color: transparent;
+    color: red;
+}

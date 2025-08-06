@@ -1,4 +1,5 @@
 import "./App.css";
+import Books from "./components/Books/Books";
 import Counter from "./components/Counter";
 
 function App() {
@@ -7,7 +8,9 @@ function App() {
       {/* {users.map((user) => (
         <User name={user.name} bio={user.email} />
       ))} */}
-      <Counter />
+      {/* <Counter /> */}
+
+      <Books />
     </>
   );
 }

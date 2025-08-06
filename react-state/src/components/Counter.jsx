@@ -12,7 +12,7 @@ export default function Counter() {
 
   const min = () => {
     let temp = count;
-    temp--;
+    temp *= 2;
     setCount(temp);
   };
 
