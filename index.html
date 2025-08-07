@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Style Feed</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            font-family: sans-serif;
+        }
+
+        .feed {
+            column-count: 6;
+            /* number of columns on wide screens */
+            column-gap: 10px;
+            padding: 10px;
+        }
+
+        .feed-item {
+            break-inside: avoid;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .feed-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feed-item img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="feed">
+        <!-- Use real or random image URLs -->
+        <div class="feed-item"><img src="https://picsum.photos/300/400?random=1" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/500?random=2" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/300?random=3" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/450?random=4" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/600?random=5" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/350?random=6" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/500?random=7" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/400?random=8" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/550?random=9" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=10" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=11" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=12" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=13" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=14" alt=""></div>
+        <div class="feed-item"><img src="https://picsum.photos/300/375?random=15" alt=""></div>
+    </div>
+
+</body>
+
+</html>
