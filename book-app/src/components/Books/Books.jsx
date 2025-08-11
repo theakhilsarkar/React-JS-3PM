@@ -22,6 +22,7 @@ export default function Books() {
   // define state
   const [books, setBooks] = useState([
     {
+      id: 1,
       title: "How to Influence Friends and People",
       author: "Dale Carnegie",
     },
@@ -75,7 +76,7 @@ export default function Books() {
       </button>
 
       {books.map((book, i) => (
-        <div>
+        <div key={i}>
           <p>
             {book.title} - {book.author}
             <button onClick={() => removeBook(i)}>Delete</button>
