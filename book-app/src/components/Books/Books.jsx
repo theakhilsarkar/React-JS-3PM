@@ -1,6 +1,18 @@
 import { useState } from "react"; //
 
-// todo,note,book,task,alarm,twitter,blog,email,classroom,chat..
+// alarm,
+// twitter,
+// blog,
+// classroom,
+// chat,
+// ecom
+// budget - in,exp
+// order management
+// LMS - course management
+// Employee Management -
+// Ticket Booking
+// Appointment Booking
+// ID Card Generator
 
 export default function Books() {
   const [title, setTitle] = useState("");
