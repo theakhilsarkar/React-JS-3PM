@@ -12,5 +12,22 @@
 // Appointment Booking - Jugal
 // ID Card Generator - Abheejit
 
-const random = parseInt(Math.random() * 13);
-console.log(random);
+// const random = parseInt(Math.random() * 13);
+// console.log(random);
+
+
+
+// what is value of your commitment.
+
+
+// Group Projects
+
+// API - BACKEND
+
+// json server
+
+// server = storage + 24/7
+// pc = storage + 24/7
+
+// API
+// REST api - get
