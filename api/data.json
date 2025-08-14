@@ -1,19 +1,24 @@
 {
-  "todo": [
+  "account": {},
+  "history": [
     {
-      "id": "4afd",
-      "task": "Walking Bed",
-      "isCompleted": false
-    },
-    {
-      "id": "dc1b",
-      "task": "Walking Bed S2",
-      "isCompleted": false
-    },
-    {
-      "id": "2",
-      "task": "Wednesday S2",
-      "isCompleted": true
+      "id": "1",
+      "amount": 1200.5,
+      "category": "shoping",
+      "status": "expanse",
+      "description": "clothes for brother",
+      "date": "14/08/2025",
+      "pay-by": "UPI"
     }
+  ],
+  "category": [
+    { "id": "1", "name": "Shoping" },
+    { "id": "2", "name": "Food" },
+    { "id": "3", "name": "Personal" },
+    { "id": "4", "name": "Investment" },
+    { "id": "5", "name": "Education" },
+    { "id": "6", "name": "Home" },
+    { "id": "7", "name": "Donate" },
+    { "id": "8", "name": "Friends" }
   ]
 }

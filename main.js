@@ -15,10 +15,7 @@
 // const random = parseInt(Math.random() * 13);
 // console.log(random);
 
-
-
 // what is value of your commitment.
-
 
 // Group Projects
 
@@ -31,5 +28,19 @@
 
 // API
 // REST api - get
+
+// json-server
+
+// 14
+
+// Budget Tracker - Income/Expanse Manager
+// CRUD
+
+// income
+// expanse
+// current balance
+// category wise filter
+// by api,
+
 
 
