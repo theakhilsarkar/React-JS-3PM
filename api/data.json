@@ -1,0 +1,19 @@
+{
+  "todo": [
+    {
+      "id": "4afd",
+      "task": "Walking Bed",
+      "isCompleted": false
+    },
+    {
+      "id": "dc1b",
+      "task": "Walking Bed S2",
+      "isCompleted": false
+    },
+    {
+      "id": "2",
+      "task": "Wednesday S2",
+      "isCompleted": true
+    }
+  ]
+}
