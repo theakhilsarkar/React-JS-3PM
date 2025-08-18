@@ -9,6 +9,15 @@
       "description": "clothes for brother",
       "date": "14/08/2025",
       "pay-by": "UPI"
+    },
+    {
+      "id": "2",
+      "amount": 12000.0,
+      "category": "Lottery",
+      "status": "income",
+      "description": "--watch movie",
+      "date": "18/08/2025",
+      "pay-by": "Cash"
     }
   ],
   "category": [

@@ -1,22 +1,17 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import Dashboard from "../../components/Dashboard/Dashboard";
+import History from "../../components/History/History";
 
 export default function Home() {
-  const [history, setHistory] = useState([]);
-  useEffect(() => {
-    fetchHistory();
-  }, []);
-
-  function fetchHistory() {
-    fetch("http://localhost:3000/history")
-      .then((res) => res.json())
-      .then((data) => setHistory(data));
-  }
   return (
-    <div>
-      {history.map((transaction, index) => (
-        <div key={index}>{transaction.description}</div>
-      ))}
-    </div>
+    <>
+      <Dashboard />
+      <History />
+    </>
   );
 }
+
+// UI(Tag) --> Component
+
+// Components
+
+// Higher Order Component, a component which return another component

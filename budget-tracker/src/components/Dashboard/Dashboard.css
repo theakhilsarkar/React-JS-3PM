@@ -1,0 +1,11 @@
+.dashboard {}
+
+.box {
+    height: 100px;
+    width: 150px;
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+}
