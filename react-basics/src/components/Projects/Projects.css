@@ -1,0 +1,11 @@
+.project-section {
+    height: 500px;
+    color: #1B262C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    background-color: #3282B8;
+}

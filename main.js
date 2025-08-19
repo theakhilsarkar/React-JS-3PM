@@ -42,5 +42,18 @@
 // category wise filter
 // by api,
 
+// useStae - state
+// useEffect -
 
+// context
+// redux toolkit
+
+// App-->
+// Home
+//  --> Profile
+//  --> About
+//  --> Contact
+// Cart
+//  --> total
+//  --> GST
 

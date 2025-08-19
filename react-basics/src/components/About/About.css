@@ -1,0 +1,27 @@
+.about-section {
+    height: 500px;
+    color: #BBE1FA;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 100%;
+    background-color: #0F4C75;
+}
+
+.detail {
+    width: 600px;
+}
+
+.img img {
+    height: 400px;
+
+}
+
+.resume-btn,
+.hire-btn {
+    margin-right: 20px;
+    color: #1B262C;
+    background-color: #BBE1FA;
+}
