@@ -1,27 +1,48 @@
 .about-section {
-    height: 500px;
+    height: 600px;
     color: #BBE1FA;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
     width: 100%;
     background-color: #0F4C75;
+    box-sizing: border-box;
 }
 
 .detail {
     width: 600px;
+    margin-left: 40px;
 }
 
-.img img {
+
+
+img {
+    width: 380px;
     height: 400px;
-
+    /* object-fit: cover; */
+    margin-right: 40px;
+    border-radius: 10px;
 }
+
+
 
 .resume-btn,
 .hire-btn {
     margin-right: 20px;
     color: #1B262C;
     background-color: #BBE1FA;
+}
+
+.github-stats {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.follower {
+    padding: 10px 0px;
+    width: 120px;
+    font-size: 18px;
+    font-weight: 600;
+    /* border: 0.5px solid #BBE1FA; */
 }
