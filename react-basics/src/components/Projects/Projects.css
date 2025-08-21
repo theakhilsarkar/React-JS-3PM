@@ -1,11 +1,44 @@
 .project-section {
-    height: 500px;
+    height: auto;
     color: #1B262C;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
     width: 100%;
     background-color: #3282B8;
+}
+
+.grid {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(6, 250px);
+    gap: 10px;
+    padding: 10px;
+    color: #1B262C;
+}
+
+.box {
+    height: 100px;
+    background-color: #BBE1FA;
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: hidden;
+}
+
+.box h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-row a {
+    text-decoration: none;
+    color: white;
 }
