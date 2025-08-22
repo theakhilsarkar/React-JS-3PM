@@ -1,0 +1,20 @@
+.contact-div {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    height: 30px;
+}
+
+.contact {
+    height: 400px;
+    width: 600px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+}

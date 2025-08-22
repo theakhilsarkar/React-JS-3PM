@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import About from "../../components/About/About";
 import Projects from "../../components/Projects/Projects";
 import axios from "axios";
+import Contact from "../../components/Contact/Contact";
 
 export default function Home() {
   const [githubData, setGithubData] = useState({});
@@ -28,6 +29,7 @@ export default function Home() {
     <div>
       <About user={githubData} length={repos.length} />
       <Projects repos={repos} />
+      <Contact />
     </div>
   );
 }

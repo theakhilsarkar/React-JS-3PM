@@ -10,7 +10,7 @@ export default function Projects(props) {
           {reposList.map((repo, index) => {
             const { name, html_url, language } = repo;
 
-            if (index <= 5) {
+            if (index <= 10) {
               return (
                 <div key={index} className="box">
                   <h2>{name}</h2>
@@ -29,3 +29,5 @@ export default function Projects(props) {
     </>
   );
 }
+
+// github
