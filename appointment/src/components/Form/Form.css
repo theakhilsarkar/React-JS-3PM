@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: start;
+    width: 500px;
+}
+
+.form label {
+    text-align: start;
+}
+
+.form input,
+select {
+    height: 30px;
+}
+
+/* .gender {} */
+
+.gender div {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 10px;
+}
