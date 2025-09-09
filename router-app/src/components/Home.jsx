@@ -20,3 +20,6 @@ export default function Home() {
 // login --> home
 // navbar - menus - click navigate - home
 // login page -- button(replace:true) --> home
+
+// product page
+// detail page
