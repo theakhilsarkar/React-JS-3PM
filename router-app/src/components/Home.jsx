@@ -10,18 +10,22 @@ export default function Home({ products, setCartList }) {
             <div className="products-view">
                 {
                     products.map((product, index) => <div key={index} className='product-box'>
+
                         <h3>{product.title}</h3>
                         <h3>{product.price}</h3>
                         <p>{product.category}</p>
+
                         <button onClick={() => {
                             console.log(product);
                             // navigate("/products", { state: index })
                             navigate("/products", { state: product })
                         }}>View</button>
+
                         <button onClick={() => {
                             setCartList(prev => [...prev, product]);
                             navigate("/carts");
                         }}>+</button>
+
                     </div>)
                 }
             </div>
@@ -31,6 +35,7 @@ export default function Home({ products, setCartList }) {
 
 // COMPONENT-->STATE-->PROP==>PASS-->DISPLAY(ONLY READABLE)
 
+//
 
 // day1
 // login --> home
@@ -46,3 +51,4 @@ export default function Home({ products, setCartList }) {
 
 // day3
 // add to cart - 
+
