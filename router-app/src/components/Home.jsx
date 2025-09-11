@@ -1,9 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import { products } from '../json/products'
 import "./Home.css";
 
-export default function Home() {
+export default function Home({ products, setCartList }) {
     const navigate = useNavigate();
     return (
         <div>
@@ -19,12 +18,18 @@ export default function Home() {
                             // navigate("/products", { state: index })
                             navigate("/products", { state: product })
                         }}>View</button>
+                        <button onClick={() => {
+                            setCartList(prev => [...prev, product]);
+                            navigate("/carts");
+                        }}>+</button>
                     </div>)
                 }
             </div>
         </div>
     )
 }
+
+// COMPONENT-->STATE-->PROP==>PASS-->DISPLAY(ONLY READABLE)
 
 
 // day1
