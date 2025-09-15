@@ -49,6 +49,17 @@ export default function Home({ products, setCartList }) {
 // product page
 // detail page
 
-// day3
-// add to cart - 
+// day 3
+// add to cart -
+
+// day 4
+// count total bill
+// remove cart item
+// fetch data from api
+// useEffect --> multi use.
+
+// local storage - save
+// private routing
+
+// wednesday = ecom
 
