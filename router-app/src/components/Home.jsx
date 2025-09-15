@@ -63,3 +63,5 @@ export default function Home({ products, setCartList }) {
 
 // wednesday = ecom
 
+// local storage day 1
+
