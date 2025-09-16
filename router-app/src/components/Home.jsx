@@ -1,11 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router'
 import "./Home.css";
+import Navbar from './Navbar';
 
 export default function Home({ products, setCartList }) {
+    const [user, setUser] = useState({});
     const navigate = useNavigate();
+
+    const getUser = () => {
+        const str = localStorage.getItem("user") ?? "{}";
+        const res = JSON.parse(str);
+        setUser(res);
+    }
+
+    useEffect(() => {
+        navigate("/home");
+        getUser();
+    }, []);
+
     return (
         <div>
+            <Navbar />
+            <h1>{user.email}</h1>
             <h2>Home Page</h2>
             <div className="products-view">
                 {
@@ -65,3 +81,4 @@ export default function Home({ products, setCartList }) {
 
 // local storage day 1
 
+// day 5 private routing

@@ -8,6 +8,8 @@ import ProductDetail from './components/ProductDetail'
 import Carts from './components/Carts'
 // import { products } from "./json/products"
 import { useEffect, useState } from 'react'
+import SignIn from './components/SignIn'
+import PrivateRoute from './components/PrivateRoute'
 
 function App() {
 
@@ -27,15 +29,9 @@ function App() {
 
   return (
     <>
-      <nav>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/projects"}>Projects</Link>
-        <Link to={"/contacts"}>Contact</Link>
-        <Link to={"/carts"}>Cart</Link>
-      </nav>
       <Routes>
-        {/* <Route path='/' element={<Home />} /> */}
-        <Route path='/' element={<Home products={products} setCartList={setCartList} />} />
+        <Route path='/' element={<PrivateRoute products={products} setCartList={setCartList} />} />
+        <Route path='/home' element={<Home products={products} setCartList={setCartList} />} />
         <Route path='/about' element={<About />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/contacts' element={<Contact />} />
