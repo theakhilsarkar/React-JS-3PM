@@ -36,6 +36,13 @@ export default App;
 // tanmay
 // bhupen
 // suraj
+// megha
+// priya
 
+// day 2
+// local -permenent,5MB,string, key:value, JSON.stringify
+// local storage = 
+// session storage = store data in only specific "session".
+// ecom - cart(local storage)
 
 
