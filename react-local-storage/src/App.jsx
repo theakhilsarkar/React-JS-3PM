@@ -44,5 +44,8 @@ export default App;
 // local storage = 
 // session storage = store data in only specific "session".
 // ecom - cart(local storage)
+// active - temp,
+// 
 
+// local vs session
 

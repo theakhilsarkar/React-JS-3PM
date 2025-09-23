@@ -2,10 +2,13 @@ import React, { useEffect, useState } from 'react'
 import SignIn from './SignIn';
 
 export default function PrivateRoute({ children }) {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState(null);
     const getUser = () => {
-        const res = JSON.parse(localStorage.getItem("user"));
-        setUser(res);
+        const str = sessionStorage.getItem("user") || "";
+        if (str != "") {
+            const res = JSON.parse(str);
+            setUser(res);
+        }
     }
 
     useEffect(() => {
