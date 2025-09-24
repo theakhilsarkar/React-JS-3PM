@@ -17,17 +17,19 @@ export default function Home() {
 
     const handleInput = () => {
         // useState, userRef
-        localStorage.setItem("user", JSON.stringify({
+        sessionStorage.setItem("user", JSON.stringify({
             "username": username,
             "password": password
         }));
     }
 
     const handleFetchUser = () => {
-        const str = localStorage.getItem("user");
-        const user = JSON.parse(str);
-        setUsername(user.username)
-        setPassword(user.password)
+        const str = sessionStorage.getItem("user") || "";
+        if (str != "") {
+            const user = JSON.parse(str);
+            setUsername(user.email)
+            setPassword(user.password)
+        }
     }
 
     // call when component render
@@ -38,14 +40,15 @@ export default function Home() {
     return (
         <div>
             <h1>Home Page</h1>
-            <input type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
+            {/* <input type="text" placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)} />
             <input type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button onClick={handleInput}>Add</button>
+            <button onClick={handleInput}>Add</button> */}
+
+
             <h3>{username}</h3>
             <h3>{password}</h3>
 
-            <p>{username}</p>
-            <p>{password}</p>
+
         </div>
     )
 }

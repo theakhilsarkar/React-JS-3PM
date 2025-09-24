@@ -7,7 +7,7 @@ export default function SignIn() {
     const handleSignIn = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        localStorage.setItem("user", JSON.stringify({
+        sessionStorage.setItem("user", JSON.stringify({
             "email": email,
             "password": password
         }))
