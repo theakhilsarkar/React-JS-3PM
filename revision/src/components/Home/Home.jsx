@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Nav-Footer/Navbar'
 import Footer from '../Nav-Footer/Footer'

@@ -7,22 +7,43 @@ export default function Home() {
     // high to low
     // low to high
 
-    const [search, setSearch] = useState("")
-    const [sortOrder, setSortOrder] = useState(true);
-
     // syncronous - top to bottom
 
     // what is state ?
     // state is one type of data/information/variable which can render/display and update on the UI.
-    // we can create state by useState hook in react. 
-    // 20 times book likh dalo.
+    // we can create state by useState hook in react.
+    // when state update, component is re-render/re-create
+    // 
 
-    let filteredData = data.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
-    filteredData = data.sort((a, b) => sortOrder ? a.price - b.price : b.price - a.price);
+
+    const [search, setSearch] = useState("")
+    const [sortOrder, setSortOrder] = useState(null);
+    const [category, setCategory] = useState("all");
+    const [rating, setRating] = useState(0);
+    let filteredData = [...data]; //assign copy of data array in filtereddata
+
+    if (search) {
+        filteredData = filteredData.filter(product => product.title.toLowerCase().includes(search.toLowerCase()))
+    }
+
+    if (sortOrder != null) {
+        filteredData = filteredData.sort((a, b) => sortOrder ? a.price - b.price : b.price - a.price);
+    }
+
+    if (category !== "all") {
+        filteredData = filteredData.filter(product => product.category.toLowerCase().includes(category.toLowerCase()))
+    }
+
+    if (rating > 0) {
+        filteredData = filteredData.filter(product => product.rating >= rating)
+    }
 
     return (
         <div>
-            <input type="text" onChange={(e) => { setSearch(e.target.value); console.log(search) }} />
+            <input placeholder='search by title' type="text" onChange={(e) => { setSearch(e.target.value); }} />
+            <input placeholder='search by category' type="text" onChange={(e) => { setCategory(e.target.value); }} />
+            <label htmlFor="rating">{rating}</label>
+            <input name='rating' type="range" min={0} max={5} step={1} value={rating} onChange={(e) => setRating(Number(e.target.value))} />
             <button onClick={() => {
                 setSortOrder(sortOrder ? false : true);
             }}>Sort</button>
@@ -39,3 +60,5 @@ export default function Home() {
         </div>
     )
 }
+
+// dashboard
