@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Nav-Footer/Navbar'
-import Footer from '../Nav-Footer/Footer'
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
+    const navigate = useNavigate();
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -20,7 +21,9 @@ export default function Home() {
                             <h3>{product.title}</h3>
                             <p>{product.category}</p>
                             <p>{product.price}</p>
-                            <button>View</button>
+                            <button onClick={() => {
+                                navigate("/detail", { state: product });
+                            }}>View</button>
                         </div>
                     })
                 }
@@ -28,6 +31,8 @@ export default function Home() {
         </div>
     )
 }
+
+// home products --> detail page
 
 
 
