@@ -1,14 +1,13 @@
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import { CounterContext } from '../context/CounterProvider'
 
 export default function Counter() {
-    const { count, setCount } = useContext(CounterContext);
+    const { count, increment } = useContext(CounterContext);
+    console.log(count);
     return (
         <div>
             <h1>{count}</h1>
-            <button onClick={() => setCount(count + 1)}>++</button>
+            <button onClick={increment}>++</button>
         </div>
     )
 }
-
-// --, *, 2x
