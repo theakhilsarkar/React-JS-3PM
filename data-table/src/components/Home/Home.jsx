@@ -20,6 +20,7 @@ export default function Home() {
     const [sortOrder, setSortOrder] = useState(null);
     const [category, setCategory] = useState("all");
     const [rating, setRating] = useState(0);
+    
     let filteredData = [...data]; //assign copy of data array in filtereddata
 
     if (search) {
