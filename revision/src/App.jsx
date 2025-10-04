@@ -1,45 +1,22 @@
-import './App.css'
-import Home from './components/Home/Home'
-import { Routes, Route, Link, useNavigate } from 'react-router-dom'
-import Product from './components/Products/Product'
-import Cart from './components/Cart/Cart'
-import Profile from './components/Profile/Profile'
-import SignIn from './components/Sign In/SignIn'
-import Detail from './components/Detail/Detail'
-import { useEffect, useState } from 'react'
+import React from 'react'
+import SignIn from './pages/SignIn'
+import "./App.css";
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home';
+import PrivateRoute from './components/PrivateRoute';
 
-function App() {
-  const [cartList, setCartList] = useState([]); //temp, reload local storage
-  useEffect(() => {
-    localStorage.setItem("cart-list", JSON.stringify(cartList));
-  }, [cartList]);
-  // side effect - parallel
-  // [] - one time call
-  // [state] - call auto when state update
-  // [state1,state2] - call auto when state1 update, state2
-  return (
-    <>
+export default function App() {
+    return (
+        <div>
+            <Routes>
+                <Route path='/' element={<PrivateRoute>
+                    < Home />
+                </PrivateRoute>} />
 
-      <Routes>
-        <Route path='/' element={<SignIn />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/cart' element={<Cart cartList={cartList} setCartList={setCartList} />} />
-        <Route path='/product' element={<Product />} />
-        <Route path='/profile' element={<Profile />} />
-        <Route path='/detail' element={<Detail setCartList={setCartList} />} />
-      </Routes>
-
-    </>
-  )
+                <Route path='/home' element={<PrivateRoute>
+                    < Home />
+                </PrivateRoute>} />
+            </Routes>
+        </div>
+    )
 }
-
-export default App
-
-// routing
-// page to another
-// home
-// profile
-// product
-// bill
-
-// react-router-dom npm
