@@ -1,0 +1,13 @@
+.products-view {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.product-box {
+    height: 300px;
+    width: 200px;
+}
+
+.detail-product-box {
+    width: 400px;
+}

@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router'
 
 export default function Navbar() {
+    // const navigate = useNavigate();
+    // navigate("/about");
     return (
         <div>
             <header data-bs-theme="dark">
@@ -40,6 +43,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="navbar navbar-dark bg-dark shadow-sm">
+
                     <div className="container">
                         <a href="#" className="navbar-brand d-flex align-items-center">
                             <svg
@@ -60,6 +64,7 @@ export default function Navbar() {
                             </svg>
                             <strong>Album</strong>
                         </a>
+                        <span className='text-light'><Link to={"/hello"}>About</Link></span>
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -74,7 +79,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </header>
-
         </div>
     )
 }
