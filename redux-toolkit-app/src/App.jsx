@@ -1,11 +1,10 @@
 import './App.css'
-import Todo from './components/Todo'
+import Book from './components/Book'
 
 function App() {
-
   return (
     <>
-      <Todo />
+      <Book />
     </>
   )
 }
