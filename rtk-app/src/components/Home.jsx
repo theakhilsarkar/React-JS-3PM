@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProducts } from '../slices/productSlice'
+import { fetchProducts, insertProduct } from '../slices/productSlice'
 
 export default function Home() {
 
@@ -9,13 +9,21 @@ export default function Home() {
 
     useEffect(() => {
         dispatch(fetchProducts());
-    }, []);
+    }, []); // [],[state]
 
     return (
         <div>
-            {
-                products.map((product, index) => <div key={index}>{product.title}</div>)
-            }
+            <button onClick={() => {
+                dispatch(insertProduct({
+                    title: "Mobile Charger",
+                    price: 1200
+                }))
+            }}>Insert</button>
+            <div>
+                {
+                    products.map((product, index) => <div key={index}>{product.id}</div>)
+                }
+            </div>
         </div>
     )
 }
