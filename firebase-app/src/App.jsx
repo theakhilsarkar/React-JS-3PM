@@ -47,6 +47,7 @@ function App() {
   const handleGetData = async () => {
     const querySnapshot = await getDocs(collection(db, "books"));
     querySnapshot.docs.forEach((doc) => console.log(doc.data()));
+    // auth.signOut();
   }
 
   return (
@@ -64,4 +65,7 @@ function App() {
   )
 }
 
-export default App
+export default App;
+
+// 28.2 --> 3;15
+
