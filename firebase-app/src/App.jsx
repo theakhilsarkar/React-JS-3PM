@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, db, provider } from './firebase';
-import { addDoc, collection, getDocs } from "firebase/firestore"
+import { addDoc, collection, getDocs, doc, setDoc, deleteDoc, updateDoc, deleteField } from "firebase/firestore"
 import './App.css'
 
 function App() {
@@ -44,10 +44,27 @@ function App() {
     }).then(() => alert("data added successfully !!")).catch(err => alert(err.message));
   }
 
+  const handleSetData = () => {
+    setDoc(doc(db, "books", "12345"), {
+      "name": "Bhagvad Geeta",
+      "author": "Ved Vyasji",
+      "price": 799
+    }).then(() => alert("data set successfully !!")).catch(err => alert(err.message));
+  }
+
+  const handleDeleteData = () => {
+    deleteDoc(doc(db, "books", "12345")).then(() => alert("document deleted successfully !!")).catch((er) => alert(er.message))
+  }
+
+  const handleDeleteField = async () => {
+    const bookRef = doc(db, "books", "kj3YFZcy9rH1TQcnUPwK");
+    await updateDoc(bookRef, { "name": "Wings of Fire" })
+    alert("field deleted successfully !!");
+  }
+
   const handleGetData = async () => {
     const querySnapshot = await getDocs(collection(db, "books"));
     querySnapshot.docs.forEach((doc) => console.log(doc.data()));
-    // auth.signOut();
   }
 
   return (
@@ -59,7 +76,10 @@ function App() {
       <button onClick={handleSignInWithGoogle}>Sign In With Google</button>
       <div>
         <button onClick={handleAddData}>Add Data</button>
-        <button onClick={handleGetData}>React Data</button>
+        <button onClick={handleGetData}>Read Data</button>
+        <button onClick={handleSetData}>Set Data</button>
+        <button onClick={handleDeleteData}>Delete Data</button>
+        <button onClick={handleDeleteField}>Delete Field</button>
       </div>
     </>
   )
@@ -69,3 +89,7 @@ export default App;
 
 // 28.2 --> 3;15
 
+
+// chat app - multi user chat, crud
+// authentication
+// firestore
