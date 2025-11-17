@@ -25,3 +25,5 @@ export default App
 
 // signin --> current user
 // signup --> db
+
+// current_user-->another --> combined collection --> chats
