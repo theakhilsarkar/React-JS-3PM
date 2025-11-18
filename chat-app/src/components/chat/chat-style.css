@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.input {
+    width: 80%;
+    border: none;
+    height: 44px;
+    padding: 8px;
+    border-radius: 10px;
+
+}
+
+.chat-view {
+    height: 90%;
+}
+
+.input-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    height: 44px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: green;
+}
+
+.chat-box {
+    height: 100vh;
+    width: 30%;
+    background-color: rgb(199, 255, 199);
+}
