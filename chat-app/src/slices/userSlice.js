@@ -62,6 +62,12 @@ const userSlice = createSlice({
     getUser: (state) => {
       state.currentUser = JSON.parse(localStorage.getItem("user") || "{}");
     },
+    getCurrentUser: (state) => {
+      // state.currentUser = {
+      //   // name: auth.currentUser.displayName,
+      //   // email: auth.currentUser.email,
+      // };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -102,7 +108,7 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { getUser } = userSlice.actions;
+export const { getUser, getCurrentUser } = userSlice.actions;
 
 // 4xx - client side bad request
 // 5xx - server side issue
