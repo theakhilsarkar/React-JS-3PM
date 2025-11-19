@@ -61,6 +61,7 @@ const userSlice = createSlice({
   reducers: {
     getUser: (state) => {
       state.currentUser = JSON.parse(localStorage.getItem("user") || "{}");
+      console.log("get user called !!", state.currentUser.email);
     },
     getCurrentUser: (state) => {
       // state.currentUser = {

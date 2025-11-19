@@ -7,19 +7,20 @@ import { doc, collection, setDoc, addDoc, getDocs } from "firebase/firestore";
 export const readMessages = createAsyncThunk(
   "chat/read",
   async ({ sender, receiver }) => {
-    const docId = sender + "_" + receiver;
-    console.log(sender, receiver);
+    const users = [sender, receiver];
+    console.log(users);
+    users.sort();
+    console.log(users);
+    const docId = users[0] + "_" + users[1];
+    console.log(docId);
+
     try {
       const snapshots = await getDocs(
         collection(db, "chatroom", docId, "chats")
       );
-      console.log(snapshots.size + "******************");
       const chatList = snapshots.docs.map((snap) => snap.data());
-      console.log("try block running");
-      console.log(chatList + "-----------------------");
       return chatList;
     } catch (e) {
-      console.log("catch block running");
       console.log(e);
     }
   }
@@ -28,10 +29,14 @@ export const readMessages = createAsyncThunk(
 export const sendMessage = createAsyncThunk(
   "chat/send",
   async ({ message, sender, receiver }) => {
-    const docId = sender + "_" + receiver; // admin@gmail.com_admin1@gmail.com
+    const users = [sender, receiver];
+    users.sort();
+    const docId = users[0] + "_" + users[1];
+
     const chatId = Date.now().toLocaleString();
     try {
       await setDoc(doc(db, "chatroom", docId, "chats", chatId), {
+        sender: sender,
         message: message,
       });
     } catch (e) {
@@ -56,7 +61,6 @@ const chatSlice = createSlice({
       })
       .addCase(sendMessage.fulfilled, (state) => {
         state.isLoading = false;
-        alert("chat sended successfully");
       })
       .addCase(sendMessage.rejected, (state) => {
         state.error = "message cant send !";
@@ -68,9 +72,6 @@ const chatSlice = createSlice({
       .addCase(readMessages.fulfilled, (state, action) => {
         state.chats = action.payload;
         state.isLoading = false;
-        console.log(action.payload);
-        console.log(state.chats);
-        console.log("chat fetched successfully !");
       })
       .addCase(readMessages.rejected, (state) => {
         state.error = "chat cant fetched !!";

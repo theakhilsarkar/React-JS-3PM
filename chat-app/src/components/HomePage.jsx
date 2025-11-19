@@ -9,7 +9,6 @@ export default function HomePage() {
     let { users, currentUser } = useSelector(state => state.user);
     useEffect(() => {
         dispatch(getUser());
-        console.log(currentUser);
         dispatch(fetchUsers())
     }, [])
     return (
