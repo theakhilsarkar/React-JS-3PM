@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./chat-style.css";
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation } from 'react-router'
-import { sendMessage, readMessages } from '../../slices/chatSlice'
+import { sendMessage, readMessages, deleteMessage } from '../../slices/chatSlice'
 import { getUser, getCurrentUser } from '../../slices/userSlice'
 
 export default function ChatPage() {
@@ -27,6 +27,11 @@ export default function ChatPage() {
         setMessage("");
     }
 
+    const handleDeleteMessage = (chatId) => {
+        dispatch(deleteMessage({ sender: currentUser.email, receiver: receiver.email, chatId: chatId }));
+        dispatch(readMessages({ sender: currentUser.email, receiver: receiver.email }));
+    }
+
     return (
         <div className='main'>
             <div className='chat-box'>
@@ -34,7 +39,10 @@ export default function ChatPage() {
                     <h3>{receiver.email}</h3>
                     <div>
                         {
-                            chats.map((chat, i) => <p key={i}>{chat.message}</p>)
+                            chats.map((chat, i) => {
+                                const position = chat.sender == currentUser.email ? 'message-end' : 'message-start'
+                                return <div onDoubleClick={() => handleDeleteMessage(chat.chatId)} key={i} className={`message-div ${position}`}><span className='message-box' >{chat.message}</span></div>
+                            })
                         }
                     </div>
                 </div>

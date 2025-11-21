@@ -35,3 +35,22 @@
     width: 30%;
     background-color: rgb(199, 255, 199);
 }
+
+.message-div {
+    display: flex;
+    margin: 10px;
+}
+
+.message-end {
+    justify-content: end;
+}
+
+.message-start {
+    justify-content: start;
+}
+
+.message-box {
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 10px;
+}
